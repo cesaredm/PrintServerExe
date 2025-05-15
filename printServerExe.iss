@@ -32,7 +32,7 @@ Source: "E:\cesar\Documents\servidor_impresion\prunsrv.exe"; DestDir: "{app}"; F
 [Run]
 ; Instalar Amazon Corretto en modo silencioso
 ; Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\amazon-corretto-23.0.2x64.msi"""; Description: Instalando JRE; Flags: waituntilidle
-Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\OpenJDK23U-jre_x64_23.0.2.msi"""; Description: Instalando JRE; Flags: waituntilidle
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\OpenJDK23U-jre_x64_23.0.2.msi"""; Description: Instalando JRE; Flags: waituntilterminated
 ; Registrar el servicio al finalizar la instalación
 ;Filename: "{app}\prunsrv.exe"; Parameters: "//IS//PrintServer --Install=""{app}\prunsrv.exe"" --DysplayName=""Servidor de impresion"" --Description=""Servicio de servidor de impresion"" --Startup=auto --Jvm=""{app}\runtime\bin\server\jvm.dll"" --StartMode=exe --StartImage=""{app}\PrintServer.exe"" --StopMode=exe --StopImage=""{app}\PrintServer.exe"" --StopParams=stop --ServiceUser=LocalSystem --StartPath=""{app}\""";
 Filename: "{app}\prunsrv.exe"; Parameters: "//IS//PrintServer --DisplayName=""Servidor de Impresión"" --Description=""Servicion de impresion CDsoft"" --Startup=auto --StartMode=exe --StartImage=""{app}\PrintServer.exe"" --StartPath=""{app}"" --StopMode=exe --StopImage=""{app}\PrintServer.exe"" --StopParams=stop --StopPath=""{app}\PrintServer.exe"" --ServiceUser=LocalSystem --LogPath=""{app}\log"" --LogLevel=Debug --StdOutput=""{app}\log\stdOutput.log"" --StdError=""{app}\log\stdError.log"""; WorkingDir: "{app}"; Flags: runhidden
