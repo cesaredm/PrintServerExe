@@ -2,7 +2,7 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>E:\cesar\Documents\NetBeansProjects\PrintServer\target\PrintServer-1.0-SNAPSHOT-jar-with-dependencies.jar</jar>
+  <jar>E:\cesar\Documents\servidor_impresion\PrintServer-1.0-SNAPSHOT-jar-with-dependencies.jar</jar>
   <outfile>E:\cesar\Documents\servidor_impresion\PrintServer.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
