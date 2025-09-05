@@ -1,0 +1,8 @@
+{
+  storage file_system C:\ProgramData\Caddy
+}
+
+printserver.local {
+    reverse_proxy 127.0.0.1:8088
+    tls internal
+}
