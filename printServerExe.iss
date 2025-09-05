@@ -29,10 +29,10 @@ Source: "E:\cesar\Documents\servidor_impresion\OpenJDK23U-jre_x64_23.0.2.msi"; D
 ; apache common daemon
 Source: "E:\cesar\Documents\servidor_impresion\prunsrv.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; la flags onlyifdoesntesist es para que no sobrescriba el archivo si ya existe, ya que ignoreversion sobrescribe los archivos mas viejos por los nuevos
-Source: "E:\cesar\Documents\servidor_impresion\printers.properties"; DestDir: "C:\impresorasConfig\"; Flags: onlyifdoesntexist 
+Source: "E:\cesar\Documents\servidor_impresion\printers.properties"; DestDir: "C:\impresorasConfig\"; Flags: onlyifdoesntexist uninsneveruninstall
 ; Archivos de Caddy, instalados en una carpeta separada
-Source: "E:\cesar\Documents\servidor_impresion\caddy\caddy.exe"; DestDir: "C:\Caddy\"; Flags: onlyifdoesntexist
-Source: "E:\cesar\Documents\servidor_impresion\caddy\Caddyfile"; DestDir: "C:\Caddy\"; Flags: onlyifdoesntexist
+Source: "E:\cesar\Documents\servidor_impresion\caddy\caddy.exe"; DestDir: "C:\Caddy\"; Flags: onlyifdoesntexist uninsneveruninstall
+Source: "E:\cesar\Documents\servidor_impresion\caddy\Caddyfile"; DestDir: "C:\Caddy\"; Flags: onlyifdoesntexist uninsneveruninstall
 
 [Run]
 ; Instalar JRE de OPENjdk Adoptium la version
