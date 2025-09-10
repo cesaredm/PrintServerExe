@@ -46,9 +46,9 @@ Filename: "sc.exe"; Parameters: "create caddy start= auto binPath= ""C:\Caddy\ca
 ; Iniciar Caddy como servicio, al iniciar Caddy crea y guarda los certificados CA en C:\ProgramData\Caddy
 Filename: "sc.exe"; Parameters: "start caddy"; Flags: runhidden
 
-; agrgar regla de firewall para el servidor en el puerto 8088 (esto por ahora no es necesario, ya que usamos caddy)
-;Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=PrintServer dir=in action=allow protocol=TCP localport=8088"; Flags: runhidden
-;Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=PrintServer dir=out action=allow protocol=TCP localport=8088"; Flags: runhidden
+; agregar regla de firewall para el servidor en el puerto 8088 (esto por ahora no es necesario, ya que usamos caddy)
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=PrintServer dir=in action=allow protocol=TCP localport=8088"; Flags: runhidden
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall add rule name=PrintServer dir=out action=allow protocol=TCP localport=8088"; Flags: runhidden
 
 [Dirs]
 ; Asegúrate de que la carpeta de Caddy exista, y si no existen crearlas, uninsneverunistall para que al desinstalar no elimine las carpetas, la eliminacion pasaria a la logica de CODE mas abajo.
@@ -61,7 +61,7 @@ Filename: "{app}\prunsrv.exe"; Parameters: "//SS//PrintServer"; Flags: runhidden
 Filename: "{app}\prunsrv.exe"; Parameters: "//DS//PrintServer"; Flags: runhidden
 Filename: "sc.exe"; Parameters: "stop caddy"; Flags: runhidden
 Filename: "sc.exe"; Parameters: "delete caddy"; Flags: runhidden
-;Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=PrintServer"; Flags: runhidden
+Filename: "{sys}\netsh.exe"; Parameters: "advfirewall firewall delete rule name=PrintServer"; Flags: runhidden
 
 [Code]
 // Define la función para preguntar al usuario durante la desinstalación si eliminamos los directorios creados cuando se instalo.

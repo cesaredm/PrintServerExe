@@ -3,6 +3,11 @@
 }
 
 printserver.local {
-    reverse_proxy 127.0.0.1:8088
-    tls internal
+    	tls internal	
+	reverse_proxy 127.0.0.1:8088 {
+    		transport http {
+			keepalive 30m
+			keepalive_interval 30s
+      		}
+    	}
 }
